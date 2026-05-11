@@ -1,0 +1,148 @@
+:root {
+    --primary: #6366f1; /* Modern İndigo */
+    --bg-dark: #0a0a0c;
+    --sidebar-bg: #111114;
+    --card-bg: #18181b;
+    --text-white: #fafafa;
+    --text-muted: #a1a1aa;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    display: flex;
+    justify-content: center;
+}
+
+.layout {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+}
+
+/* Sidebar Tasarımı */
+.sidebar {
+    width: 300px;
+    background: var(--sidebar-bg);
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    border-right: 1px solid #27272a;
+}
+
+.profile-frame {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--primary), #a855f7);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.sidebar h1 { font-size: 1.5rem; margin-bottom: 5px; }
+.tag { color: var(--primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 40px; }
+
+.nav-links { display: flex; flex-direction: column; gap: 15px; flex-grow: 1; }
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+.nav-links a:hover { color: var(--text-white); padding-left: 8px; }
+
+.sidebar-footer { font-size: 0.75rem; color: #52525b; line-height: 1.5; }
+
+/* İçerik Alanı */
+.content {
+    margin-left: 300px;
+    padding: 60px 80px;
+    flex-grow: 1;
+}
+
+.section { margin-bottom: 80px; }
+.section-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+
+/* Kartlar ve Chipler */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+.chips span {
+    background: #27272a;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #27272a;
+    transition: 0.3s;
+}
+
+.card:hover { border-color: var(--primary); transform: translateY(-5px); }
+.card-date { font-size: 0.7rem; color: var(--text-muted); }
+.card h3 { margin: 10px 0; font-size: 1.1rem; }
+.card p { font-size: 0.9rem; color: var(--text-muted); }
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover { opacity: 0.9; transform: scale(1.05); }
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .layout { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid #27272a; }
+    .content { margin-left: 0; padding: 40px 20px; }
+}
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.contact-info strong {
+    color: var(--primary);
+}
